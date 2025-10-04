@@ -1,0 +1,37 @@
+{
+  "name": "astrux",
+  "version": "0.1.1",
+  "description": "Astrux JavaScript/TypeScript SDK",
+  "license": "MIT",
+  "author": "Thomas Bodénan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astrux-labs/astrux-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/astrux-labs/astrux-js/issues"
+  },
+  "homepage": "https://astrux.io",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node ./scripts/bundle.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": { "node": ">=18" },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^20.11.30",
+    "esbuild": "^0.23.0"
+  }
+}
